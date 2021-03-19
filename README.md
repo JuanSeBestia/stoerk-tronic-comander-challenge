@@ -13,9 +13,13 @@ Here you can find challenges whit respectively answers
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). With the typescript template.
 
-## Road Map
+### ADR (Architecture decision record)
 
-- [] Choose timeline option, se more info in [docs/ADR_001_choose_chart_library.md](docs/ADR_001_choose_chart_library.md)
+- [docs/ADR_001_choose_chart_library.md](docs/ADR_001_choose_chart_library.md)
+
+### Road Map
+
+- [x] Choose timeline option, se more info in [docs/ADR_001_choose_chart_library.md](docs/ADR_001_choose_chart_library.md)
 - [] Put mock/real data in timeline chart
 - [] Change styles and colors to reflect to MockApp proposed
 - [] Add API faced interaction with state
