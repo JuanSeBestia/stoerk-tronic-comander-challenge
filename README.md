@@ -13,6 +13,19 @@ Here you can find challenges whit respectively answers
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). With the typescript template.
 
+## Road Map
+
+- [] Choose timeline option, se more info in [docs/ADR_001_choose_chart_library.md](docs/ADR_001_choose_chart_library.md)
+- [] Put mock/real data in timeline chart
+- [] Change styles and colors to reflect to MockApp proposed
+- [] Add API faced interaction with state
+- [] Add filters
+- [] Add DatePicker
+- [] Add application layout
+- [] Support responsive versions
+- [] Add i18n multi-language support
+- [] Add controller screen
+
 ## Available Scripts
 
 In the project directory, you can run:
