@@ -1,4 +1,4 @@
-# Challenge 1
+# Challenge 1 - Design issues
 
 Please identify design issues in the following UI, could you also give us some suggestions for this UI
 
