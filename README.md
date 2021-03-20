@@ -32,14 +32,14 @@ Demo available at [JuanSeBestia.github.io/stoerk-tronic-comander-challenge](http
 - [X] Change styles and colors to reflect to MockApp proposed
 - [X] Add filters
 - [X] Add DatePicker
-- [] unit test for business-logic
-- [] Add application layout
-- [] integration test for screens
-- [] Add Overview functionality
-- [] Add Overview zoom functionality
-- [] Support responsive versions
-- [] Add i18n multi-language support
-- [] Add controller screen
+- [ ] unit test for business-logic
+- [ ] Add application layout
+- [ ] integration test for screens
+- [ ] Add Overview functionality
+- [ ] Add Overview zoom functionality
+- [ ] Support responsive versions
+- [ ] Add i18n multi-language support
+- [ ] Add controller screen
 
 ## Available Scripts
 
