@@ -124,4 +124,5 @@ There some examples
 
 23. An UI is suggested to improve the user experience.
 
+![docs/challenges/imgs/ux-suggestion.png](imgs/ux-suggestion.png)
 The source file can be found [here](adobe-xd/challenge-2-ux.xd)
