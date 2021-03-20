@@ -25,9 +25,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [] Change styles and colors to reflect to MockApp proposed
 - [] Add filters
 - [] Add DatePicker
+- [] unit test for business-logic
+- [] Add application layout
+- [] integration test for screens
 - [] Add Overview functionality
 - [] Add Overview zoom functionality
-- [] Add application layout
 - [] Support responsive versions
 - [] Add i18n multi-language support
 - [] Add controller screen

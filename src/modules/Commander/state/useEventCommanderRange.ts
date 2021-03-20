@@ -18,7 +18,7 @@ function useEventCommanderRange() {
     eventCommanderAPI
       .getEvents()
       .then(setEventCommanderRangeList)
-      // .catch(setError)
+      .catch(setError)
       .finally(() => setLoading(false));
   }, []);
 

@@ -1,18 +1,17 @@
-import sleepPromise from "../../../utils/mock/sleepPromise";
+import sleepPromise from "../../../shared/utils/mock/sleepPromise";
 import { EventCommanderRange, EventComponentType } from "../models/events";
 import eventsToRangeEvents from "./eventsToRangeEvents";
 import eventsMock from "./mock/eventsMock";
 
 export const API_URL = "https://some-api.com/api/commander/events";
+
 /**
  * API for EventCommander
  */
 const eventCommanderAPI = {
   getEvents: (): Promise<Record<EventComponentType, EventCommanderRange[]>> =>
     sleepPromise()
-      .then(() => {
-        return eventsMock();
-      })
+      .then(() => eventsMock())
       .then((events) => ({
         [EventComponentType.DEVICE]: eventsToRangeEvents(
           events[EventComponentType.DEVICE]
