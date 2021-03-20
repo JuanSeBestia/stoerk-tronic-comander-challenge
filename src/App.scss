@@ -15,6 +15,9 @@ $theme-colors: (
   flex-direction: column;
   header {
     height: 64px;
+    img{
+      height: 64px;
+    }
   }
   main {
     flex: 1;

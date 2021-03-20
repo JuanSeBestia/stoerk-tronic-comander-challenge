@@ -31,7 +31,7 @@ function Commander() {
 
   return (
     <div className="Commander">
-      <h1  className="text-primary text-center">Commander: {series[0].title}</h1>
+      <h1  className="text-primary text-center my-5">Commander: {series[0].title}</h1>
       <Card className="m-3">
         <div>
           <Filters filterState={filterState} setFilterState={setFilterState} />
