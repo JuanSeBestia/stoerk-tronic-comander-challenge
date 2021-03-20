@@ -5,12 +5,8 @@ import { Accordion, Button, Card, Form } from "react-bootstrap";
 import { EventComponentType, EventStateType } from "../models/events";
 import { eventStateTypeColor } from "../business-logic/rangeEventsToApexchartSeries";
 import MultipleChoseForm, { MultipleChoseFormProps } from "./MultipleChoseForm";
-
-export interface FilterState {
-  components: string[];
-  states: string[];
-}
-
+import RangeDateTimePicker from "./RangeDateTimePicker";
+import { FilterState } from "../models/filters";
 export interface FilterProps {
   filterState: FilterState;
   setFilterState: (state: FilterState) => void;
@@ -24,14 +20,15 @@ export enum FilterTypes {
 
 function Filters({ filterState, setFilterState }: FilterProps) {
   const refForm = useRef<HTMLFormElement | null>(null);
-  const { components, states } = filterState;
+  const { components, states, dates } = filterState;
   const setComponents = (components: string[]) =>
     setFilterState({ ...filterState, components });
   const setStates = (states: string[]) =>
     setFilterState({ ...filterState, states });
+  const setDates = (dates: FilterState["dates"]) =>
+    setFilterState({ ...filterState, dates });
   return (
     <Form ref={refForm}>
-      <div>{JSON.stringify(filterState)}</div>
       <Accordion>
         <Card>
           <Card.Header className="d-flex flex-row justify-content-between align-items-center">
@@ -87,6 +84,13 @@ function Filters({ filterState, setFilterState }: FilterProps) {
           </Accordion.Collapse>
           <Accordion.Collapse eventKey={FilterTypes.DATES}>
             <Card.Body>
+              <RangeDateTimePicker
+                controlId="dates"
+                field={dates}
+                setField={setDates}
+                labelFrom="Start date"
+                labelTo="Final date"
+              />
             </Card.Body>
           </Accordion.Collapse>
         </Card>

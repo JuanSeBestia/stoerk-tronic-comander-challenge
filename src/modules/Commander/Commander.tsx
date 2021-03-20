@@ -11,24 +11,30 @@ import selectorGetSeries from "./state/selectorGetSeries";
 import useEventCommanderRange from "./state/useEventCommanderRange";
 import { EventComponentType, EventStateType } from "./models/events";
 import { eventStateTypeColor } from "./business-logic/rangeEventsToApexchartSeries";
-import Filters, { FilterState } from "./components/Filters";
+import Filters from "./components/Filters";
+import { FilterState } from "./models/filters";
+import moment from "moment";
 
-
-export const initialFilterState = {
-  components: [],
-  states: [],
+export const initialFilterState: FilterState = {
+  components: Object.values(EventComponentType),
+  states: Object.values(EventStateType),
+  dates: { from: moment().add(-10, "days"), to: moment() },
 };
 
 function Commander() {
-  const [eventCommanderRangeList, loading, error] = useEventCommanderRange();
+  const [filterState, setFilterState] = useState<FilterState>(
+    initialFilterState
+  );
+
+  const [eventCommanderRangeList, loading, error] = useEventCommanderRange(filterState);
   const series = selectorGetSeries(eventCommanderRangeList);
-  const [filterState, setFilterState] = useState<FilterState>(initialFilterState);
 
   return (
     <div className="Commander">
       <h1>Commander: {series[0].title}</h1>
       <Card className="m-3">
         <div>
+          <div>{JSON.stringify(filterState)}</div>
           <Filters filterState={filterState} setFilterState={setFilterState} />
         </div>
         <div id="chart">

@@ -1,29 +1,63 @@
 import sleepPromise from "../../../shared/utils/mock/sleepPromise";
-import { EventCommanderRange, EventComponentType } from "../models/events";
+import {
+  EventCommander,
+  EventCommanderRange,
+  EventComponentType,
+} from "../models/events";
+import { FilterState } from "../models/filters";
 import eventsToRangeEvents from "./eventsToRangeEvents";
 import eventsMock from "./mock/eventsMock";
 
 export const API_URL = "https://some-api.com/api/commander/events";
 
+function addEvents(
+  events: Record<EventComponentType, EventCommander[]>,
+  type: EventComponentType,
+  filterState: FilterState
+) {
+  return filterState.components.includes(type)
+    ? eventsToRangeEvents(events[type])
+    : [];
+}
 /**
  * API for EventCommander
  */
 const eventCommanderAPI = {
-  getEvents: (): Promise<Record<EventComponentType, EventCommanderRange[]>> =>
+  getEvents: (
+    filterState: FilterState
+  ): Promise<Record<EventComponentType, EventCommanderRange[]>> =>
     sleepPromise()
-      .then(() => eventsMock())
+      .then(() => {
+        return eventsMock(filterState.dates.from, filterState.dates.to);
+      })
+      .then((events) =>
+        Object.keys(events).reduce((dic, key) => {
+          dic[key as EventComponentType] = events[
+            key as EventComponentType
+          ].filter((item) => filterState.states.includes(item.state));
+          return dic;
+        }, {} as Record<EventComponentType, EventCommander[]>)
+      )
       .then((events) => ({
-        [EventComponentType.DEVICE]: eventsToRangeEvents(
-          events[EventComponentType.DEVICE]
+        [EventComponentType.DEVICE]: addEvents(
+          events,
+          EventComponentType.DEVICE,
+          filterState
         ),
-        [EventComponentType.COMPRESSOR]: eventsToRangeEvents(
-          events[EventComponentType.COMPRESSOR]
+        [EventComponentType.COMPRESSOR]: addEvents(
+          events,
+          EventComponentType.COMPRESSOR,
+          filterState
         ),
-        [EventComponentType.FAN]: eventsToRangeEvents(
-          events[EventComponentType.FAN]
+        [EventComponentType.FAN]: addEvents(
+          events,
+          EventComponentType.FAN,
+          filterState
         ),
-        [EventComponentType.LIGHT]: eventsToRangeEvents(
-          events[EventComponentType.LIGHT]
+        [EventComponentType.LIGHT]: addEvents(
+          events,
+          EventComponentType.LIGHT,
+          filterState
         ),
       }))
       .then((data) => {

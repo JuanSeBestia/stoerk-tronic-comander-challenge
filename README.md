@@ -22,9 +22,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [x] Choose timeline option, se more info in [docs/ADR_001_choose_chart_library.md](docs/ADR_001_choose_chart_library.md)
 - [X] Put mock/real data in timeline chart
 - [X] Add API faced interaction with state
-- [] Change styles and colors to reflect to MockApp proposed
-- [] Add filters
-- [] Add DatePicker
+- [X] Change styles and colors to reflect to MockApp proposed
+- [X] Add filters
+- [X] Add DatePicker
 - [] unit test for business-logic
 - [] Add application layout
 - [] integration test for screens

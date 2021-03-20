@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import eventCommanderAPI from "../business-logic/eventCommanderAPI";
 import { EventCommanderRange, EventComponentType } from "../models/events";
+import { FilterState } from "../models/filters";
 
-function useEventCommanderRange() {
+function useEventCommanderRange(filterState: FilterState) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<undefined | string>(undefined);
   const [eventCommanderRangeList, setEventCommanderRangeList] = useState<
@@ -15,12 +16,13 @@ function useEventCommanderRange() {
   });
 
   useEffect(() => {
+    setLoading(true);
     eventCommanderAPI
-      .getEvents()
+      .getEvents(filterState)
       .then(setEventCommanderRangeList)
-      .catch(setError)
+      // .catch(setError)
       .finally(() => setLoading(false));
-  }, []);
+  }, [filterState]);
 
   return [eventCommanderRangeList, loading, error];
 }
