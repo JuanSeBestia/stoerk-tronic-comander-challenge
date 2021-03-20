@@ -13,7 +13,12 @@ Here you can find challenges whit respectively answers
 
 ## React App (challenge 4)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). With the typescript template.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). With the typescript template and adapted to use SASS.
+
+The visual interface is based on [challenge 3](docs/challenges/003_mock_app_events.md), but some visual aspects diverge from it to prioritize the functionalities that can give it more value in less time. you can see the functionalities proposed in the [Road Map](#Road-Map)
+### DEMO
+
+Demo available at [JuanSeBestia.github.io/stoerk-tronic-comander-challenge](https://JuanSeBestia.github.io/stoerk-tronic-comander-challenge)
 
 ### ADR (Architecture decision record)
 
