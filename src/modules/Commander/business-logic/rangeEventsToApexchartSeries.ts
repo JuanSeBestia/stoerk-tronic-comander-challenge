@@ -12,7 +12,7 @@ const COMPRESSOR_COLOR = `#8973D6`;
 const FAN_COLOR = `#F2BB38`;
 const LIGHT_COLOR = `#72E8A7`;
 
-const eventStateTypeColor: Record<
+export const eventStateTypeColor: Record<
   EventComponentType,
   Record<EventStateType, string>
 > = {

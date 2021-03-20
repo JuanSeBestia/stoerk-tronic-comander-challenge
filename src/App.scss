@@ -1,0 +1,23 @@
+$theme-colors: (
+  "info": #0069b4,
+  "primary": #0069b4,
+  "secondary": #00be68,
+  "danger": tomato,
+);
+
+// configure boostrap
+@import "~bootstrap/scss/bootstrap";
+
+// header: static, main: scroll
+.App {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  header {
+    height: 64px;
+  }
+  main {
+    flex: 1;
+    overflow: auto;
+  }
+}

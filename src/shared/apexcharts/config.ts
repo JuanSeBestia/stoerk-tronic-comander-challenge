@@ -109,12 +109,6 @@ const options = {
         w.globals.seriesRangeStart[seriesIndex][dataPointIndex],
         w.globals.seriesRangeEnd[seriesIndex][dataPointIndex]
       );
-      console.log(
-        "DATA",
-        data,
-        buildCustomTooltipHTML({ color, seriesName, ylabel, start, end, diff })
-      );
-
       return buildCustomTooltipHTML({
         color,
         seriesName,
