@@ -1,8 +1,11 @@
+import _ from "lodash";
 import moment from "moment";
+import { useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import rangeEventsToApexchartSeries from "./business-logic/rangeEventsToApexchartSeries";
 
 import "./Commander.scss";
-import mockDataCommander from "./mock/mockDataCommander";
+import useEventCommanderRange from "./state/useEventCommanderRange";
 
 const options = {
   chart: {
@@ -13,7 +16,7 @@ const options = {
     bar: {
       horizontal: true,
       distributed: true,
-      barHeight: '90%',
+      barHeight: "90%",
       dataLabels: {
         hideOverflowingLabels: false,
       },
@@ -30,7 +33,7 @@ const options = {
     },
     style: {
       colors: ["#f3f4f5", "#fff"],
-      height: 800
+      height: 800,
     },
   },
   xaxis: {
@@ -47,13 +50,16 @@ const options = {
   },
 };
 
-const series = [
+// optimizing state
+const getSeries = _.memoize((eventCommanderRangeList) => [
   {
-    data: mockDataCommander,
+    data: rangeEventsToApexchartSeries(eventCommanderRangeList),
   },
-];
+]);
 
 function Commander() {
+  const [eventCommanderRangeList, loading, error] = useEventCommanderRange();
+  const series = getSeries(eventCommanderRangeList);
   return (
     <div className="Commander">
       <div id="chart">
@@ -64,6 +70,7 @@ function Commander() {
           height={500}
         />
       </div>
+      <div>{JSON.stringify({ loading, error })}</div>
     </div>
   );
 }

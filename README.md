@@ -20,11 +20,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### Road Map
 
 - [x] Choose timeline option, se more info in [docs/ADR_001_choose_chart_library.md](docs/ADR_001_choose_chart_library.md)
-- [] Put mock/real data in timeline chart
+- [X] Put mock/real data in timeline chart
+- [X] Add API faced interaction with state
 - [] Change styles and colors to reflect to MockApp proposed
-- [] Add API faced interaction with state
 - [] Add filters
 - [] Add DatePicker
+- [] Add Overview functionality
+- [] Add Overview zoom functionality
 - [] Add application layout
 - [] Support responsive versions
 - [] Add i18n multi-language support
