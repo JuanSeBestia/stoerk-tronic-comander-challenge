@@ -31,10 +31,9 @@ function Commander() {
 
   return (
     <div className="Commander">
-      <h1>Commander: {series[0].title}</h1>
+      <h1  className="text-primary text-center">Commander: {series[0].title}</h1>
       <Card className="m-3">
         <div>
-          <div>{JSON.stringify(filterState)}</div>
           <Filters filterState={filterState} setFilterState={setFilterState} />
         </div>
         <div id="chart">

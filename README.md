@@ -8,6 +8,8 @@ Here you can find challenges whit respectively answers
 
 1. [Challenge 1 - Design issues](/docs/challenges/001_desing_issues.md)
 2. [Challenge 2 - Digital channels](docs/challenges/002_digital_channel_issue.md)
+3. [Challenge 3 - Mock app](docs/challenges/003_mock_app_events.md)
+4. [Challenge 4 - React App](#React-App-(challenge-4))
 
 ## React App (challenge 4)
 

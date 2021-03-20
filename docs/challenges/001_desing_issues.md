@@ -121,3 +121,7 @@ There some examples
     Is important to fix this feeling before focusing on topics with less impact.
 
 22. According to the layout of the elements it does not seem that it was intended to be supported in mobile version, should we worry about it?
+
+23. An UI is suggested to improve the user experience.
+
+The source file can be found [here](adobe-xd/challenge-2-ux.xd)
