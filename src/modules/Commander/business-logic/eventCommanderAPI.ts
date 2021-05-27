@@ -1,4 +1,5 @@
 import moment from "moment";
+import axios from "axios";
 import sleepPromise from "../../../shared/utils/mock/sleepPromise";
 import {
   EventCommanderSensorData,
@@ -23,7 +24,11 @@ const eventCommanderAPI = {
       .then(() => {
         return sensorData;
         // return sensorDataWeek
-        // return sensorDataMonth as EventCommanderSensorData[];
+        // return axios
+        //   .get(
+        //     "https://raw.githubusercontent.com/JuanSeBestia/stoerk-tronic-comander-challenge/378b5d56661e90755cffc80f9d2860a6260cadbd/src/modules/Commander/business-logic/mock/sensorDataMonth.json"
+        //   )
+        //   .then((data) => data.data as EventCommanderSensorData[]);
       })
       // Filter dates
       .then((sensorData) =>
