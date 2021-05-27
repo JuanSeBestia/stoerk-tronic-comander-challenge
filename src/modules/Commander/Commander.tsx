@@ -1,22 +1,20 @@
 import _ from "lodash";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 
 import "./Commander.scss";
 
 import Loading from "../../shared/components/Loading";
-import selectorGetSeries from "./state/selectorGetSeries";
 import useEventCommanderRange from "./state/useEventCommanderRange";
 import { EventComponentType, EventStateType } from "./models/events";
-import { eventStateTypeColor } from "./business-logic/rangeEventsToApexchartSeries";
-import Filters from "./components/Filters";
+import Filters, { FilterProps } from "./components/Filters";
 import { FilterState } from "./models/filters";
 import moment from "moment";
-import { ChartProps } from "./components/Charts/chart.model";
+import { ChartProps, COLORS } from "./components/Charts/chart.model";
 import { SomeComponent } from "./models/react";
 
 export const initialFilterState: FilterState = {
-  components: Object.values(EventComponentType),
+  components: [],
   states: Object.values(EventStateType),
   dates: { from: moment().add(-10, "days"), to: moment() },
 };
@@ -27,21 +25,40 @@ function Commander({ ChartComponent }: CommanderProps) {
   const [filterState, setFilterState] =
     useState<FilterState>(initialFilterState);
 
-  const [eventCommanderRangeList, loading, error] =
+  const { sensorDataRangeList, loading, error } =
     useEventCommanderRange(filterState);
-  const series = selectorGetSeries(eventCommanderRangeList);
+  const [componentsOptions, setComponentsOptions] =
+    useState<FilterProps['componentsOptions']>([]);
+
+  useEffect(() => {
+    const options = sensorDataRangeList.map((sensor, index) => ({
+      text: `${sensor.controlunit}-${sensor.channel}: ${sensor.controlunitName}`,
+      value: sensor,
+      id: `${sensor.controlunit}-${sensor.channel}`,
+      color: COLORS[index],
+    }));
+    setComponentsOptions(options);
+  }, []);
 
   return (
     <div className="Commander">
       <h1 className="text-primary text-center my-5">
-        Commander: {series[0].title}
+        Commander: Example Comander
       </h1>
       <Card className="m-3">
         <div>
-          <Filters filterState={filterState} setFilterState={setFilterState} />
+          <Filters
+            filterState={filterState}
+            setFilterState={setFilterState}
+            componentsOptions={componentsOptions}
+          />
         </div>
         <div id="chart">
-          {loading ? <Loading /> : <ChartComponent data={series} />}
+          {loading ? (
+            <Loading />
+          ) : (
+            <ChartComponent data={sensorDataRangeList} />
+          )}
         </div>
       </Card>
     </div>

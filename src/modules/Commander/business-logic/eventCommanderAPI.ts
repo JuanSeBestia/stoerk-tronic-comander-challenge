@@ -1,65 +1,49 @@
+import moment from "moment";
 import sleepPromise from "../../../shared/utils/mock/sleepPromise";
 import {
-  EventCommander,
-  EventCommanderRange,
-  EventComponentType,
+  EventCommanderSensorData,
+  EventCommanderSensorRangeData,
 } from "../models/events";
 import { FilterState } from "../models/filters";
 import eventsToRangeEvents from "./eventsToRangeEvents";
-import eventsMock from "./mock/eventsMock";
+import { sensorData } from "./mock/sensorData";
+// import sensorDataMonth from "./mock/sensorDataMonth.json";
+import { sensorDataWeek } from "./mock/sensorDataWeek";
 
 export const API_URL = "https://some-api.com/api/commander/events";
 
-function addEvents(
-  events: Record<EventComponentType, EventCommander[]>,
-  type: EventComponentType,
-  filterState: FilterState
-) {
-  return filterState.components.includes(type)
-    ? eventsToRangeEvents(events[type])
-    : [];
-}
 /**
- * API for EventCommander
+ * API for SensorCommander
  */
 const eventCommanderAPI = {
   getEvents: (
     filterState: FilterState
-  ): Promise<Record<EventComponentType, EventCommanderRange[]>> =>
-    sleepPromise()
+  ): Promise<EventCommanderSensorRangeData[]> =>
+    sleepPromise(500)
       .then(() => {
-        return eventsMock(filterState.dates.from, filterState.dates.to);
+        return sensorData;
+        // return sensorDataWeek
+        // return sensorDataMonth as EventCommanderSensorData[];
       })
-      .then((events) =>
-        Object.keys(events).reduce((dic, key) => {
-          dic[key as EventComponentType] = events[
-            key as EventComponentType
-          ].filter((item) => filterState.states.includes(item.state));
-          return dic;
-        }, {} as Record<EventComponentType, EventCommander[]>)
+      // Filter dates
+      .then((sensorData) =>
+        sensorData.map((sensor) => ({
+          ...sensor,
+          values: sensor.values.filter(
+            (value) =>
+              moment(filterState.dates.from).isSameOrBefore(
+                moment(value.timestamp)
+              ) &&
+              moment(filterState.dates.to).isSameOrAfter(
+                moment(value.timestamp)
+              )
+          ),
+        }))
       )
-      .then((events) => ({
-        [EventComponentType.DEVICE]: addEvents(
-          events,
-          EventComponentType.DEVICE,
-          filterState
-        ),
-        [EventComponentType.COMPRESSOR]: addEvents(
-          events,
-          EventComponentType.COMPRESSOR,
-          filterState
-        ),
-        [EventComponentType.FAN]: addEvents(
-          events,
-          EventComponentType.FAN,
-          filterState
-        ),
-        [EventComponentType.LIGHT]: addEvents(
-          events,
-          EventComponentType.LIGHT,
-          filterState
-        ),
-      }))
+      // TODO Filter components
+      // TODO Filter state
+      // Aggregate ranges
+      .then((data) => eventsToRangeEvents(data, 60 * 5))
       .then((data) => {
         console.log("eventCommanderAPI:", { data });
         return data;

@@ -3,13 +3,14 @@ import { useRef } from "react";
 import { Accordion, Button, Card, Form } from "react-bootstrap";
 
 import { EventComponentType, EventStateType } from "../models/events";
-import { eventStateTypeColor } from "../business-logic/rangeEventsToApexchartSeries";
 import MultipleChoseForm, { MultipleChoseFormProps } from "./MultipleChoseForm";
 import RangeDateTimePicker from "./RangeDateTimePicker";
 import { FilterState } from "../models/filters";
+import { COLORS } from "./Charts/chart.model";
 export interface FilterProps {
   filterState: FilterState;
   setFilterState: (state: FilterState) => void;
+  componentsOptions: MultipleChoseFormProps["options"];
 }
 
 export enum FilterTypes {
@@ -18,7 +19,11 @@ export enum FilterTypes {
   DATES = "DATES",
 }
 
-function Filters({ filterState, setFilterState }: FilterProps) {
+function Filters({
+  filterState,
+  setFilterState,
+  componentsOptions,
+}: FilterProps) {
   const refForm = useRef<HTMLFormElement | null>(null);
   const { components, states, dates } = filterState;
   const setComponents = (components: string[]) =>
@@ -98,16 +103,6 @@ function Filters({ filterState, setFilterState }: FilterProps) {
     </Form>
   );
 }
-
-const componentsOptions: MultipleChoseFormProps["options"] = Object.values(
-  EventComponentType
-).map((value) => ({
-  text: value,
-  value,
-  id: value,
-  color: eventStateTypeColor[value as EventComponentType][EventStateType.ON],
-}));
-
 const statesOptions: MultipleChoseFormProps["options"] = Object.values(
   EventStateType
 ).map((value) => ({

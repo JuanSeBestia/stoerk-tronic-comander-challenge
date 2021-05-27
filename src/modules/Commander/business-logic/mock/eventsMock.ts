@@ -2,10 +2,13 @@ import moment, { Moment } from "moment";
 import _ from "lodash";
 
 import {
-  EventCommander,
+//   EventCommander,
   EventComponentType,
   EventStateType,
 } from "../../models/events";
+
+// Deleted type
+type EventCommander = any
 /**
  * get a state according a probability of last item in the list
  *

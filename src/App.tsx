@@ -29,7 +29,7 @@ function App() {
                 className="d-none d-md-inline mx-2 logo"
                 src={logo}
                 alt="Logo"
-              />{" "}
+              />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
