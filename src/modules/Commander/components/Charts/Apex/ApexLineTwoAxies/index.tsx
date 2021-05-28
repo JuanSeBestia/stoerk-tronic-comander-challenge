@@ -8,6 +8,9 @@ const optionsLine = {
   // ...options,
 
   chart: {
+    animations: {
+      enabled: false,
+    },
     id: "chart1",
     height: 130,
     type: "line",
@@ -26,24 +29,23 @@ const optionsLine = {
   },
   xaxis: {
     type: "datetime",
-    
   },
-//   yaxis: [
-//   {
-//     title: {
-//       text: "Series A"
-//     },
-//   },
-//   {
-//     opposite: true,
-//     title: {
-//       text: "Series B"
-//     }
-//   }
-// ],
+  yaxis: [
+    {
+      title: {
+        text: "Celcius (Cº)",
+      },
+    },
+    {
+      opposite: true,
+      title: {
+        text: "Percent (%)",
+      },
+    },
+  ],
 };
 
-export default function ApexLine({ data }: ChartProps) {
+export default function ApexLineTwoAxies({ data }: ChartProps) {
   const series = useMemo(() => mapEventToSeriesApexTimeLineChart(data), [data]);
   console.log({ series });
 

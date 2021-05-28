@@ -36,9 +36,10 @@ const mockDates = [
 ];
 function mapEventToSeriesApexTimeLineChart(
   listSensors: EventCommanderSensorRangeData[]
-): TimeLineApexChart[] {
+){
   return listSensors.map((sensor, indexSensor) => ({
     name: `${sensor.controlunit}-${sensor.channel}`,
+    unit: sensor.unit,
     // data: mockDates
     data: sensor.values.map((event) => ({
       x: event.timestamp as number,
