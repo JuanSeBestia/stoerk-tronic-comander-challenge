@@ -7,6 +7,7 @@ import MultipleChoseForm, { MultipleChoseFormProps } from "./MultipleChoseForm";
 import RangeDateTimePicker from "./RangeDateTimePicker";
 import { FilterState } from "../models/filters";
 import { COLORS } from "./Charts/chart.model";
+import RelativeTimePicker from "./RelativeTimePicker";
 export interface FilterProps {
   filterState: FilterState;
   setFilterState: (state: FilterState) => void;
@@ -89,12 +90,17 @@ function Filters({
           </Accordion.Collapse>
           <Accordion.Collapse eventKey={FilterTypes.DATES}>
             <Card.Body>
-              <RangeDateTimePicker
+              {/* <RangeDateTimePicker
                 controlId="dates"
                 field={dates}
                 setField={setDates}
                 labelFrom="Start date"
                 labelTo="Final date"
+              /> */}
+              <RelativeTimePicker
+                controlId="relative-date"
+                field={dates}
+                setField={setDates}
               />
             </Card.Body>
           </Accordion.Collapse>

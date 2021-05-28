@@ -45,7 +45,7 @@ function Commander({ ChartComponent }: CommanderProps) {
       <h1 className="text-primary text-center my-5">
         Commander: Example Comander
       </h1>
-      <Card className="m-3">
+      <Card className="m-sm-3">
         <div>
           <Filters
             filterState={filterState}

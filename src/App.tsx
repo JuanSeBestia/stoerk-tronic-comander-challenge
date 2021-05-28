@@ -14,7 +14,10 @@ import {
 import fontawesome from "@fortawesome/fontawesome";
 import { faCheckSquare, faCoffee } from "@fortawesome/fontawesome-free-solid";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { chartSeries } from "./modules/Commander/components/Charts/chartSeries";
+import {
+  chartLine,
+  chartSeries,
+} from "./modules/Commander/components/Charts/chartSeries";
 
 fontawesome.library.add(faCheckSquare, faCoffee);
 
@@ -42,6 +45,13 @@ function App() {
                     </NavDropdown.Item>
                   ))}
                 </NavDropdown>
+                <NavDropdown title="TimeLineChart" id="basic-nav-dropdown">
+                  {chartLine.map((chart) => (
+                    <NavDropdown.Item href={`#/${chart.path}`}>
+                      {chart.name}
+                    </NavDropdown.Item>
+                  ))}
+                </NavDropdown>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
@@ -53,6 +63,11 @@ function App() {
                 <Commander ChartComponent={chart.ChartComponent} />
               </Route>
             ))}
+            {chartLine.map((chart) => (
+              <Route path={`/${chart.path}`}>
+                <Commander ChartComponent={chart.ChartComponent} />
+              </Route>
+            ))}
             <Route path="/">
               <h3 className="m-3">
                 There is many demos to see different implementations of the
@@ -60,6 +75,21 @@ function App() {
                 mobile. Please only take into account the interaction of the
                 chart
               </h3>
+              <div className="m-3">
+                <h2>TimeRangeSeries:</h2>
+                {chartSeries.map((chart) => (
+                  <NavDropdown.Item href={`#/${chart.path}`}>
+                    {chart.name}
+                  </NavDropdown.Item>
+                ))}
+                <h2>TimeLinesSeries:</h2>
+
+                {chartLine.map((chart) => (
+                  <NavDropdown.Item href={`#/${chart.path}`}>
+                    {chart.name}
+                  </NavDropdown.Item>
+                ))}
+              </div>
             </Route>
           </Switch>
         </main>

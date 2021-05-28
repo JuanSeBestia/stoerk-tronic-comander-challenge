@@ -51,7 +51,6 @@ function buildCustomTooltipHTML({
 const options = {
   chart: {
     height: 350,
-    type: "rangeBar",
   },
   plotOptions: {
     bar: {
