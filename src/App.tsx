@@ -73,7 +73,8 @@ function App() {
                 There is many demos to see different implementations of the
                 charts, remember that it is very important to test them on
                 mobile. Please only take into account the interaction of the
-                chart
+                chart. Each chart will render in relative time day 960
+                timestamps x 9 channels == ${960 * 9}
               </h3>
               <div className="m-3">
                 <h2>TimeRangeSeries:</h2>
