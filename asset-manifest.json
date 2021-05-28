@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/stoerk-tronic-comander-challenge/static/css/main.771f254c.chunk.css",
-    "main.js": "/stoerk-tronic-comander-challenge/static/js/main.0527bfbb.chunk.js",
-    "main.js.map": "/stoerk-tronic-comander-challenge/static/js/main.0527bfbb.chunk.js.map",
-    "runtime-main.js": "/stoerk-tronic-comander-challenge/static/js/runtime-main.cfb8bceb.js",
-    "runtime-main.js.map": "/stoerk-tronic-comander-challenge/static/js/runtime-main.cfb8bceb.js.map",
-    "static/js/2.b57b0e10.chunk.js": "/stoerk-tronic-comander-challenge/static/js/2.b57b0e10.chunk.js",
-    "static/js/2.b57b0e10.chunk.js.map": "/stoerk-tronic-comander-challenge/static/js/2.b57b0e10.chunk.js.map",
-    "static/js/3.f477b9ee.chunk.js": "/stoerk-tronic-comander-challenge/static/js/3.f477b9ee.chunk.js",
-    "static/js/3.f477b9ee.chunk.js.map": "/stoerk-tronic-comander-challenge/static/js/3.f477b9ee.chunk.js.map",
+    "main.css": "/stoerk-tronic-comander-challenge/static/css/main.4f08f0a1.chunk.css",
+    "main.js": "/stoerk-tronic-comander-challenge/static/js/main.547f262f.chunk.js",
+    "main.js.map": "/stoerk-tronic-comander-challenge/static/js/main.547f262f.chunk.js.map",
+    "runtime-main.js": "/stoerk-tronic-comander-challenge/static/js/runtime-main.60c6a7f1.js",
+    "runtime-main.js.map": "/stoerk-tronic-comander-challenge/static/js/runtime-main.60c6a7f1.js.map",
+    "static/js/2.a35d5db5.chunk.js": "/stoerk-tronic-comander-challenge/static/js/2.a35d5db5.chunk.js",
+    "static/js/2.a35d5db5.chunk.js.map": "/stoerk-tronic-comander-challenge/static/js/2.a35d5db5.chunk.js.map",
+    "static/js/3.e14ec5a3.chunk.js": "/stoerk-tronic-comander-challenge/static/js/3.e14ec5a3.chunk.js",
+    "static/js/3.e14ec5a3.chunk.js.map": "/stoerk-tronic-comander-challenge/static/js/3.e14ec5a3.chunk.js.map",
     "index.html": "/stoerk-tronic-comander-challenge/index.html",
-    "static/css/main.771f254c.chunk.css.map": "/stoerk-tronic-comander-challenge/static/css/main.771f254c.chunk.css.map",
-    "static/js/2.b57b0e10.chunk.js.LICENSE.txt": "/stoerk-tronic-comander-challenge/static/js/2.b57b0e10.chunk.js.LICENSE.txt",
+    "static/css/main.4f08f0a1.chunk.css.map": "/stoerk-tronic-comander-challenge/static/css/main.4f08f0a1.chunk.css.map",
+    "static/js/2.a35d5db5.chunk.js.LICENSE.txt": "/stoerk-tronic-comander-challenge/static/js/2.a35d5db5.chunk.js.LICENSE.txt",
     "static/media/logo-stor.89e05a91.jpeg": "/stoerk-tronic-comander-challenge/static/media/logo-stor.89e05a91.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.cfb8bceb.js",
-    "static/js/2.b57b0e10.chunk.js",
-    "static/css/main.771f254c.chunk.css",
-    "static/js/main.0527bfbb.chunk.js"
+    "static/js/runtime-main.60c6a7f1.js",
+    "static/js/2.a35d5db5.chunk.js",
+    "static/css/main.4f08f0a1.chunk.css",
+    "static/js/main.547f262f.chunk.js"
   ]
 }
