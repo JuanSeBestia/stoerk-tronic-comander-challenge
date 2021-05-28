@@ -4,8 +4,8 @@ import {
   EventCommanderSensorRangeData,
   EventStateType,
   // EventCommanderRange,
-} from "../../../../models/events";
-import { COLORS } from "../../chart.model";
+} from "../../../models/events";
+import { COLORS } from "../chart.model";
 import { TimeLineApexChart } from "./TimeLineApexcharts.model";
 
 const mockDates = [
@@ -34,13 +34,13 @@ const mockDates = [
     y: 52,
   },
 ];
-function mapEventToSeriesApexBrushChart(
+function mapEventToSeriesApexTimeLineChart(
   listSensors: EventCommanderSensorRangeData[]
 ): TimeLineApexChart[] {
   return listSensors.map((sensor, indexSensor) => ({
     name: `${sensor.controlunit}-${sensor.channel}`,
     // data: mockDates
-    data: sampleOrdered(sensor.values, 10).map((event) => ({
+    data: sensor.values.map((event) => ({
       x: event.timestamp as number,
       y: event.value,
       fillColor: event.valid ? COLORS[indexSensor] : COLORS[indexSensor] + "66",
@@ -54,7 +54,7 @@ function mapEventToSeriesApexBrushChart(
     // })),
   }));
 }
-export default mapEventToSeriesApexBrushChart;
+export default mapEventToSeriesApexTimeLineChart;
 
 function sampleOrdered<T>(list: T[], size: number) {
   const sampleTime = Math.floor(list.length / size);

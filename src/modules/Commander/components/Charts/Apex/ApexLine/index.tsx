@@ -2,7 +2,7 @@ import ReactApexChart from "react-apexcharts";
 import { ChartProps } from "../../chart.model";
 import options from "../config";
 import React, { useMemo } from "react";
-import mapEventToSeriesApexTimeLineChart from "./mapEventToSeriesApexBrushChart";
+import mapEventToSeriesApexTimeLineChart from "../mapEventToSeriesApexBrushChart";
 
 const optionsLine = {
   // ...options,

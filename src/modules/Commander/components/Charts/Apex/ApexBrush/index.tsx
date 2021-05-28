@@ -3,8 +3,8 @@ import _ from "lodash"
 import { ChartProps } from "../../chart.model";
 import options from "../config";
 import React, { useMemo } from "react";
-import mapEventToSeriesApexBrushChart from "./mapEventToSeriesApexBrushChart";
 import { BurstMode } from "@material-ui/icons";
+import mapEventToSeriesApexTimeLineChart from "../mapEventToSeriesApexBrushChart";
 
 const optionsLine = {
   chart: {
@@ -81,7 +81,7 @@ const brushOptions = {
 };
 
 export default function ApexBrush({ data }: ChartProps) {
-  const series = useMemo(() => mapEventToSeriesApexBrushChart(data), [data]);
+  const series = useMemo(() => mapEventToSeriesApexTimeLineChart(data), [data]);
   const comfigMemo = useMemo(() => {
     const copiedOpt = _.cloneDeep(optionsLine)
     copiedOpt.chart.selection.xaxis.max = series[0].data[Math.ceil(series[0].data.length/4*3)].x
