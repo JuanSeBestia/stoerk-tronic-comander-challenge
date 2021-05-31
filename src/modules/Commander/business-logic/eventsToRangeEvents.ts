@@ -4,7 +4,6 @@ import {
   EventCommanderSensorDataRangeValue,
   EventCommanderSensorRangeData,
 } from "../models/events";
-import { sensorData } from "./mock/sensorData";
 /**
  * Map list of EventCommanderSensorData to list of EventCommanderSensorRangeData
  * @param listSensorData

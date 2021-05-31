@@ -73,8 +73,11 @@ function App() {
                 There is many demos to see different implementations of the
                 charts, remember that it is very important to test them on
                 mobile. Please only take into account the interaction of the
-                chart. Each chart will render in relative time day 960
-                timestamps x 9 channels == ${960 * 9}
+                chart. Each chart will render in relative time: 
+                <li>"hour": will render 40 timestamps x 9 channels == ${40 * 9} on 26KB</li>
+                <li>"day": will render 960 timestamps x 9 channels == ${960 * 9} on 586KB</li>
+                <li>"week": will render 6638 timestamps x 9 channels == ${960 * 9} on 3.2MB</li>
+                <li>"month": will render 6638 timestamps x 9 channels == ${960 * 9}on 14M</li>               
               </h3>
               <div className="m-3">
                 <h2>TimeRangeSeries:</h2>

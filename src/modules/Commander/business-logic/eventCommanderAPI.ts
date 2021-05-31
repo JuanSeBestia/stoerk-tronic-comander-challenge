@@ -7,9 +7,6 @@ import {
 } from "../models/events";
 import { FilterState } from "../models/filters";
 import eventsToRangeEvents from "./eventsToRangeEvents";
-import { sensorData } from "./mock/sensorData";
-// import sensorDataMonth from "./mock/sensorDataMonth.json";
-import { sensorDataWeek } from "./mock/sensorDataWeek";
 
 export const API_URL = "https://some-api.com/api/commander/events";
 
@@ -22,24 +19,23 @@ const eventCommanderAPI = {
   ): Promise<EventCommanderSensorRangeData[]> =>
     sleepPromise(500)
       .then(() => {
+        const baseRaw =
+          "https://raw.githubusercontent.com/JuanSeBestia/stoerk-tronic-comander-challenge/e83dc62d678c18644c73c221339d9a7deda05fea/public/example_data/";
         switch (filterState.dates.relative) {
           case "month":
-            return axios
-              .get(
-                "https://raw.githubusercontent.com/JuanSeBestia/stoerk-tronic-comander-challenge/378b5d56661e90755cffc80f9d2860a6260cadbd/src/modules/Commander/business-logic/mock/sensorDataMonth.json"
-              )
-              .then((data) => data.data as EventCommanderSensorData[]);
+            return axios.get(baseRaw + "sensorDataMonth.json");
           case "week":
-            return sensorDataWeek;
+            return axios.get(baseRaw + "sensorDataWeek.json");
           case "day":
-            return sensorData;
+            return axios.get(baseRaw + "sensorDataDay.json");
           case "hour":
-              return sensorData;
+            return axios.get(baseRaw + "sensorDataHour.json");
 
           default:
-            return sensorData;
+            return axios.get(baseRaw + "sensorDataHour.json");
         }
       })
+      .then((data) => data.data as EventCommanderSensorData[])
       // Filter dates
       // .then((sensorData) =>
       //   sensorData.map((sensor) => ({

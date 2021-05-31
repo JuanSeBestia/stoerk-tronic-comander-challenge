@@ -35,6 +35,7 @@ function RelativeTimePicker({
         onChange={handleChange}
         label="Date ago"
       >
+        <MenuItem value={"hour"}>Hour ago</MenuItem>
         <MenuItem value={"day"}>24 hours</MenuItem>
         <MenuItem value={"week"}>Week ago</MenuItem>
         <MenuItem value={"month"}>Month ago</MenuItem>
