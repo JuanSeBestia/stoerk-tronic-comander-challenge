@@ -1,4 +1,5 @@
 import ApexBrush from "./Apex/ApexBrush";
+import ApexBrushWithRange from "./Apex/ApexBrush/ApexBrushWithRange";
 import ApexLine from "./Apex/ApexLine";
 import ApexLineTwoAxies from "./Apex/ApexLineTwoAxies";
 import ApexSeries from "./Apex/ApexSeries";
@@ -17,6 +18,11 @@ export const chartSeries = [
 
 export const chartLine = [
   { name: "ApexBrush", path: "line/ApexBrush", ChartComponent: ApexBrush },
+  {
+    name: "ApexBrushWithRange",
+    path: "line/ApexBrushWithRange",
+    ChartComponent: ApexBrushWithRange,
+  },
   { name: "ApexLine", path: "line/ApexLine", ChartComponent: ApexLine },
   {
     name: "ApexLine2Axies",
