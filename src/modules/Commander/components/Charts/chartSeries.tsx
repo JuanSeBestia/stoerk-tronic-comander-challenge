@@ -3,9 +3,16 @@ import ApexLine from "./Apex/ApexLine";
 import ApexLineTwoAxies from "./Apex/ApexLineTwoAxies";
 import ApexSeries from "./Apex/ApexSeries";
 import { MultiAxisLine } from "./ChartJS";
+import BrushDevExtreme from "./DevExtreme/BrushDevExtreme";
+import RangeTime from "./DevExtreme/RangeTime";
 
 export const chartSeries = [
   { name: "ApexSeries", path: "series/ApexSeries", ChartComponent: ApexSeries },
+  {
+    name: "DevExtremeRangeTime",
+    path: "series/DevExtremeRangeTime",
+    ChartComponent: RangeTime,
+  },
 ];
 
 export const chartLine = [
@@ -20,5 +27,10 @@ export const chartLine = [
     name: "MultiAxisLine",
     path: "line/MultiAxisLine",
     ChartComponent: MultiAxisLine,
+  },
+  {
+    name: "BrushDevExtreme",
+    path: "line/BrushDevExtreme",
+    ChartComponent: BrushDevExtreme,
   },
 ];
