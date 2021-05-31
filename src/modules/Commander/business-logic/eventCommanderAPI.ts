@@ -33,6 +33,8 @@ const eventCommanderAPI = {
             return sensorDataWeek;
           case "day":
             return sensorData;
+          case "hour":
+              return sensorData;
 
           default:
             return sensorData;
