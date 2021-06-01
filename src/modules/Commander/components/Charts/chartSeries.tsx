@@ -6,6 +6,9 @@ import ApexSeries from "./Apex/ApexSeries";
 import { MultiAxisLine } from "./ChartJS";
 import { C3LineBrush } from "./D3/C3";
 import D3BarChart from "./D3/D3/D3BarChart";
+import D3Line from "./D3/D3/D3Line";
+import D3Line2 from "./D3/D3/D3Line2";
+import D3Line3 from "./D3/D3/D3Line3";
 import { D3Zoom } from "./D3/Zoom/D3Zoom";
 import { ReactD3Line } from "./D3/Zoom/ReactD3Line";
 import BrushDevExtreme from "./DevExtreme/BrushDevExtreme";
@@ -62,5 +65,20 @@ export const chartLine = [
     name: "D3BarChart",
     path: "line/D3BarChart",
     ChartComponent: D3BarChart,
+  },
+  {
+    name: "D3Line",
+    path: "line/D3Line",
+    ChartComponent: D3Line,
+  },
+  {
+    name: "D3Line2",
+    path: "line/D3Line2",
+    ChartComponent: D3Line2,
+  },
+  {
+    name: "D3Line3",
+    path: "line/D3Line3",
+    ChartComponent: D3Line3,
   },
 ];
