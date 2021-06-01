@@ -9,6 +9,7 @@ import D3BarChart from "./D3/D3/D3BarChart";
 import D3Line from "./D3/D3/D3Line";
 import D3Line2 from "./D3/D3/D3Line2";
 import D3Line3 from "./D3/D3/D3Line3";
+import D3Line4 from "./D3/D3/D3Line4";
 import { D3Zoom } from "./D3/Zoom/D3Zoom";
 import { ReactD3Line } from "./D3/Zoom/ReactD3Line";
 import BrushDevExtreme from "./DevExtreme/BrushDevExtreme";
@@ -80,5 +81,10 @@ export const chartLine = [
     name: "D3Line3",
     path: "line/D3Line3",
     ChartComponent: D3Line3,
+  },
+  {
+    name: "D3Line4 ",
+    path: "line/D3Line4",
+    ChartComponent: D3Line4,
   },
 ];
