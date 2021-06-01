@@ -36,6 +36,7 @@ function MultipleChoseForm({
         <Form.Label>{label}</Form.Label>
         {options.map((item) => (
           <Form.Check
+            key={item.id}
             id={item.id}
             type="checkbox"
             name={item.id}

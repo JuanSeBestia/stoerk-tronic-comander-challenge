@@ -5,7 +5,9 @@ import ApexLineTwoAxies from "./Apex/ApexLineTwoAxies";
 import ApexSeries from "./Apex/ApexSeries";
 import { MultiAxisLine } from "./ChartJS";
 import { C3LineBrush } from "./D3/C3";
+import D3BarChart from "./D3/D3/D3BarChart";
 import { D3Zoom } from "./D3/Zoom/D3Zoom";
+import { ReactD3Line } from "./D3/Zoom/ReactD3Line";
 import BrushDevExtreme from "./DevExtreme/BrushDevExtreme";
 import RangeTime from "./DevExtreme/RangeTime";
 
@@ -51,6 +53,14 @@ export const chartLine = [
     path: "line/D3Zoom",
     ChartComponent: D3Zoom,
   },
-  
-  
+  {
+    name: "ReactD3Line",
+    path: "line/ReactD3Line",
+    ChartComponent: ReactD3Line,
+  },
+  {
+    name: "D3BarChart",
+    path: "line/D3BarChart",
+    ChartComponent: D3BarChart,
+  },
 ];
