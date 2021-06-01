@@ -4,6 +4,8 @@ import ApexLine from "./Apex/ApexLine";
 import ApexLineTwoAxies from "./Apex/ApexLineTwoAxies";
 import ApexSeries from "./Apex/ApexSeries";
 import { MultiAxisLine } from "./ChartJS";
+import { C3LineBrush } from "./D3/C3";
+import { D3Zoom } from "./D3/Zoom/D3Zoom";
 import BrushDevExtreme from "./DevExtreme/BrushDevExtreme";
 import RangeTime from "./DevExtreme/RangeTime";
 
@@ -39,4 +41,16 @@ export const chartLine = [
     path: "line/BrushDevExtreme",
     ChartComponent: BrushDevExtreme,
   },
+  {
+    name: "C3Line",
+    path: "line/C3Line",
+    ChartComponent: C3LineBrush,
+  },
+  {
+    name: "D3Zoom",
+    path: "line/D3Zoom",
+    ChartComponent: D3Zoom,
+  },
+  
+  
 ];

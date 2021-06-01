@@ -25,9 +25,12 @@
     "apexcharts": "^3.26.0",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "c3": "^0.7.20",
     "chart.js": "^3.3.0",
     "chartjs-adapter-moment": "^1.0.0",
     "chartjs-plugin-zoom": "^1.0.0",
+    "devextreme": "^20.2.4",
+    "devextreme-react": "20.2.3",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "react": "^17.0.1",
@@ -39,9 +42,7 @@
     "react-scripts": "4.0.3",
     "sass": "^1.32.8",
     "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1",
-    "devextreme": "^20.2.4",
-    "devextreme-react": "20.2.3"
+    "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -70,8 +71,12 @@
     ]
   },
   "devDependencies": {
+    "@types/c3": "^0.7.5",
     "@types/lodash": "^4.14.168",
+    "devextreme-themebuilder": "^20.2.4",
     "gh-pages": "^3.1.0",
-    "devextreme-themebuilder": "^20.2.4"
+    "package-size": "^2.3.0",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "webpack-bundle-analyzer": "^4.4.2"
   }
 }
