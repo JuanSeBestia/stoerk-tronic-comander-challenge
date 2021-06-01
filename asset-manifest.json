@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/stoerk-tronic-comander-challenge/static/css/main.4f08f0a1.chunk.css",
-    "main.js": "/stoerk-tronic-comander-challenge/static/js/main.fc983537.chunk.js",
-    "main.js.map": "/stoerk-tronic-comander-challenge/static/js/main.fc983537.chunk.js.map",
+    "main.js": "/stoerk-tronic-comander-challenge/static/js/main.6b3d3d66.chunk.js",
+    "main.js.map": "/stoerk-tronic-comander-challenge/static/js/main.6b3d3d66.chunk.js.map",
     "runtime-main.js": "/stoerk-tronic-comander-challenge/static/js/runtime-main.aefd19a8.js",
     "runtime-main.js.map": "/stoerk-tronic-comander-challenge/static/js/runtime-main.aefd19a8.js.map",
     "static/css/2.a7b53900.chunk.css": "/stoerk-tronic-comander-challenge/static/css/2.a7b53900.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.a7b53900.chunk.css",
     "static/js/2.674115a0.chunk.js",
     "static/css/main.4f08f0a1.chunk.css",
-    "static/js/main.fc983537.chunk.js"
+    "static/js/main.6b3d3d66.chunk.js"
   ]
 }
