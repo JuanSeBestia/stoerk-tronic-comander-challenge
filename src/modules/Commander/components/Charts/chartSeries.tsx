@@ -25,7 +25,7 @@ export const chartSeries = [
     ChartComponent: RangeTime,
   },
   {
-    name: "STGoogleSeries(Not work yet)",
+    name: "STGoogleSeries",
     path: "line/STGoogleSeries",
     ChartComponent: STGoogleSeries,
   },
