@@ -52,39 +52,39 @@ export const chartLine = [
     path: "line/C3Line",
     ChartComponent: C3LineBrush,
   },
-  {
-    name: "D3Zoom",
-    path: "line/D3Zoom",
-    ChartComponent: D3Zoom,
-  },
-  {
-    name: "ReactD3Line",
-    path: "line/ReactD3Line",
-    ChartComponent: ReactD3Line,
-  },
-  {
-    name: "D3BarChart",
-    path: "line/D3BarChart",
-    ChartComponent: D3BarChart,
-  },
+  // {
+  //   name: "D3Zoom",
+  //   path: "line/D3Zoom",
+  //   ChartComponent: D3Zoom,
+  // },
+  // {
+  //   name: "ReactD3Line",
+  //   path: "line/ReactD3Line",
+  //   ChartComponent: ReactD3Line,
+  // },
+  // {
+  //   name: "D3BarChart",
+  //   path: "line/D3BarChart",
+  //   ChartComponent: D3BarChart,
+  // },
+  // {
+  //   name: "D3Line",
+  //   path: "line/D3Line",
+  //   ChartComponent: D3Line,
+  // },
+  // {
+  //   name: "D3Line2",
+  //   path: "line/D3Line2",
+  //   ChartComponent: D3Line2,
+  // },
   {
     name: "D3Line",
     path: "line/D3Line",
-    ChartComponent: D3Line,
-  },
-  {
-    name: "D3Line2",
-    path: "line/D3Line2",
-    ChartComponent: D3Line2,
-  },
-  {
-    name: "D3Line3",
-    path: "line/D3Line3",
     ChartComponent: D3Line3,
   },
-  {
-    name: "D3Line4 ",
-    path: "line/D3Line4",
-    ChartComponent: D3Line4,
-  },
+  // {
+  //   name: "D3Line4 ",
+  //   path: "line/D3Line4",
+  //   ChartComponent: D3Line4,
+  // },
 ];

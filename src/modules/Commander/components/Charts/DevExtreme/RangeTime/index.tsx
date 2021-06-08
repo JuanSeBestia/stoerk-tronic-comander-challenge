@@ -28,8 +28,7 @@ function RangeTime({ data }: ChartProps) {
         <Tick visible={false} />
       </ArgumentAxis>
       {/* @ts-ignore */}
-      <Title text="The British Monarchy" subtitle="An Abbreviated Timeline" />
-      <Subtitle text="An Abbreviated Timeline2" />
+      <Title text="Sensor Data TimeSerieRange" subtitle="Data maping to events" />
       <CommonSeriesSettings
         type="rangeBar"
         argumentField="controlunit-channel"
