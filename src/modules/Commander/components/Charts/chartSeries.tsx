@@ -14,6 +14,7 @@ import { D3Zoom } from "./D3/Zoom/D3Zoom";
 import { ReactD3Line } from "./D3/Zoom/ReactD3Line";
 import BrushDevExtreme from "./DevExtreme/BrushDevExtreme";
 import RangeTime from "./DevExtreme/RangeTime";
+import STGoogleLine from "./ST-Google/STGoogleLine";
 
 export const chartSeries = [
   { name: "ApexSeries", path: "series/ApexSeries", ChartComponent: ApexSeries },
@@ -87,4 +88,9 @@ export const chartLine = [
   //   path: "line/D3Line4",
   //   ChartComponent: D3Line4,
   // },
+  {
+    name: "STGoogleLine",
+    path: "line/STGoogleLine",
+    ChartComponent: STGoogleLine,
+  },
 ];
